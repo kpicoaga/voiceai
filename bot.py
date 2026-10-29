@@ -1,12 +1,19 @@
+"""TCF Canada Tâche 2 voice coach, configured from instructions.json.
+
+The coach prompt, tool descriptions, per-tool briefings, and runtime settings
+(model, voice, transcription, transport) all come from ``instructions.json``;
+this file only implements the behaviour the tools need.
+"""
+
 import json
 import os
 import re
 from pathlib import Path
 
 from dotenv import load_dotenv
+from pipecat.adapters.schemas.function_schema import FunctionSchema
 from pipecat.frames.frames import LLMRunFrame
 from pipecat.pipeline.pipeline import Pipeline
-from pipecat.pipeline.worker import PipelineParams, PipelineWorker
 from pipecat.processors.aggregators.llm_context import LLMContext
 from pipecat.processors.aggregators.llm_response_universal import (
     LLMContextAggregatorPair,
@@ -15,19 +22,41 @@ from pipecat.runner.types import RunnerArguments
 from pipecat.runner.utils import create_transport
 from pipecat.services.llm_service import FunctionCallParams
 from pipecat.transports.base_transport import TransportParams
+from pipecat.workers.runner import WorkerRunner
+from pipecat.pipeline.worker import PipelineParams, PipelineWorker
 from pipecat_boson.realtime import BosonRealtimeLLMService
+
+from instructions_loader import (
+    get_coach_instructions,
+    get_runtime_config,
+    get_tool_config,
+    get_tool_instructions,
+)
 
 load_dotenv(override=True)
 
+BASE_DIR = Path(__file__).resolve().parent
+
+# ---------------------------------------------------------------- config
+
+COACH_INSTRUCTIONS = get_coach_instructions()
+TOOL_CONFIG = {tool["name"]: tool for tool in get_tool_config()}
+TOOL_INSTRUCTIONS = get_tool_instructions()
+RUNTIME = get_runtime_config()
+
+DIALOGUE_DIR = Path(os.getenv("DIALOGUES_DIR", BASE_DIR / "dialogues"))
+
 # 24 kHz PCM is handled by the service; transport just needs audio in/out
 transport_params = {
-    "webrtc": lambda: TransportParams(audio_in_enabled=True, audio_out_enabled=True),
+    RUNTIME.get("transport", "webrtc"): lambda: TransportParams(
+        audio_in_enabled=RUNTIME.get("audio_in_enabled", True),
+        audio_out_enabled=RUNTIME.get("audio_out_enabled", True),
+    ),
 }
 
 
 # ---------------------------------------------------------------- dialogues
 
-DIALOGUE_DIR = Path("dialogues")
 current = {}  # remembers which dialogue is active
 
 
@@ -37,7 +66,9 @@ def _load(path: Path) -> dict:
 
 def _find_dialogue(query: str):
     files = sorted(DIALOGUE_DIR.glob("*.json"))
-    q = query.lower().strip()
+    q = (query or "").lower().strip()
+    if not q:
+        return None
     for f in files:                                  # exact name
         if f.stem.lower() == q:
             return f
@@ -47,9 +78,12 @@ def _find_dialogue(query: str):
             n = re.search(r"\d+", f.stem)
             if n and int(n.group()) == int(m.group()):
                 return f
-    for f in files:                                  # words from title/topic
+    for f in files:                                  # words from title/topic/description
         d = _load(f)
-        if q and (q in d.get("title", "").lower() or q in d.get("description", "").lower()):
+        haystack = " ".join(
+            str(d.get(k, "")) for k in ("title", "topic", "description")
+        ).lower()
+        if q in haystack:
             return f
     return None
 
@@ -59,8 +93,20 @@ async def list_dialogues(params: FunctionCallParams) -> None:
     items = []
     for f in sorted(DIALOGUE_DIR.glob("*.json")):
         d = _load(f)
-        items.append({"id": f.stem, "title": d.get("title", ""), "topic": d.get("topic", "")})
-    await params.result_callback({"dialogues": items})
+        items.append(
+            {
+                "id": f.stem,
+                "title": d.get("title", ""),
+                "topic": d.get("topic", ""),
+                "situation": d.get("description", ""),
+            }
+        )
+    await params.result_callback(
+        {
+            "dialogues": items,
+            "instructions_for_you": TOOL_INSTRUCTIONS.get("list_dialogues") or "",
+        }
+    )
 
 
 async def start_dialogue(params: FunctionCallParams, dialogue: str) -> None:
@@ -72,110 +118,157 @@ async def start_dialogue(params: FunctionCallParams, dialogue: str) -> None:
     path = _find_dialogue(dialogue)
     if path is None:
         await params.result_callback(
-            {"error": "Dialogue not found. Call list_dialogues and offer the options."}
+            {
+                "error": f"No dialogue matches {dialogue!r}.",
+                "instructions_for_you": (
+                    "Tell the user that dialogue was not found, then call "
+                    "list_dialogues and ask them to choose one."
+                ),
+            }
         )
         return
 
     d = _load(path)
     roles = d.get("roles", {})
     bot_speaker = next((s for s, r in roles.items() if r == "E"), "Speaker 1")
-    bot_lines = [t["text"] for t in d["turns"] if t["speaker"] == bot_speaker]
     current["data"] = d
+    current["id"] = path.stem
 
-    await params.result_callback({
-        "title": d["title"],
-        "situation": d["description"],
-        "register": d.get("register", "vous"),
-        "points_to_cover": d.get("consigne", []),
-        "facts_you_know": bot_lines,
-        "instructions_for_you": (
-            "BRIEFING d'abord (2 phrases en français) : annonce la situation, puis dis : "
-            "« Vous parlez en premier. Dites « je suis prêt » quand vous voulez commencer. » "
-            "Ensuite, SILENCE : attends que le candidat ouvre l'échange. Ne dis jamais la première réplique.\n\n"
-            "Tu joues UNIQUEMENT l'interlocuteur (examinateur dans la situation). Le candidat, c'est l'utilisateur. "
-            "Dans la vraie épreuve, le candidat pose les questions pour obtenir des informations ; toi, tu réponds.\n"
-            "RÈGLES :\n"
-            "- Français uniquement, 1 à 2 phrases courtes par réponse, une information à la fois, ton naturel.\n"
-            "- Ne donne que ce qui est demandé. Ne propose pas de sujets, n'aide pas le candidat, ne pose pas "
-            "de questions toi-même (sauf une courte demande de clarification : « Pardon ? » ou « Vous voulez dire… ? »).\n"
-            "- S'il y a un long silence, dis seulement « Oui ? » puis attends.\n"
-            "- Utilise le registre indiqué dans « register » (tu ou vous). Si le candidat se trompe de registre, "
-            "ne le corrige pas : retiens-le pour le bilan.\n"
-            "- Réponds avec les faits de « facts_you_know », avec tes propres mots, dans l'ordre où le candidat les demande. "
-            "S'il demande autre chose, invente une réponse simple et plausible.\n"
-            "- Une seule fois, s'il pose une question de type « et si jamais… », réponds normalement. Si le candidat "
-            "n'en pose pas, ajoute vers la fin une petite complication (une place complète, un prix qui change) "
-            "pour voir comment il réagit.\n"
-            "- Si le candidat dit ne pas avoir compris, répète plus simplement.\n"
-            "- NE CORRIGE PAS pendant l'échange.\n"
-            "- Quand le candidat clôture (« Bonne journée », « Merci, je vous rappelle ») ou dit « stop » ou « bilan », "
-            "réponds brièvement puis appelle finish_dialogue.\n"
-            "- Quand le candidat dit « stop » ou « bilan », réponds brièvement puis termine."
-        ),
-    })
+    # Pair every answer of the character with the candidate question it responds
+    # to, so the model can pick the one fact that was actually asked for instead
+    # of reciting the whole list. The hint comes from the candidate turn's note.
+    facts = []
+    question = None
+    for turn in d["turns"]:
+        if turn["speaker"] == bot_speaker:
+            facts.append(
+                {
+                    "if_asked_about": (
+                        question["text"]
+                        if question
+                        else "(you are the one being called - do not say this until the user greets you)"
+                    ),
+                    "answer_with": turn["text"],
+                    "note": turn.get("note", ""),
+                }
+            )
+            question = None
+        else:
+            question = turn
+
+    await params.result_callback(
+        {
+            "id": path.stem,
+            "title": d.get("title", ""),
+            "situation": d.get("description", ""),
+            "topic": d.get("topic", ""),
+            "register": d.get("register", "vous"),
+            "points_to_cover": d.get("consigne", []),
+            "facts_you_know": facts,
+            "useful_expressions": d.get("expressions", []),
+            "instructions_for_you": TOOL_INSTRUCTIONS.get("start_dialogue") or "",
+        }
+    )
 
 
 async def finish_dialogue(params: FunctionCallParams) -> None:
     """Call when the practice call is over, to give feedback on the performance."""
     d = current.get("data", {})
-    await params.result_callback({
-        "useful_expressions": d.get("expressions", []),
-        "instructions_for_you": (
-            "Sors du rôle. Donne un bilan court en français, avec cette grille (estime honnêtement, "
-            "dis « environ » si tu n'es pas sûr d'un chiffre) :\n"
-            "1) Nombre de questions posées (objectif 12-15).\n"
-            "2) Enchaînements avec « puisque / à propos de / justement / vous avez mentionné » (objectif ≥ 3).\n"
-            "3) Réactions après les réponses (« c'est noté », « ça me rassure »…) (objectif ≥ 8).\n"
-            "4) Part de questions « X ou plutôt Y ? » (objectif < 25 %).\n"
-            "5) A-t-il couvert : ouverture polie avec contexte, question de faisabilité, prix, horaires, conditions, "
-            "inscription, question « si jamais », récapitulatif « Donc si je résume… », clôture ?\n"
-            "6) Registre tu/vous correct ?\n"
-            "Puis : 2 points forts, et seulement 3 erreurs récurrentes avec la forme correcte. "
-            "Mentionne les expressions utiles de « useful_expressions » qu'il a utilisées ou oubliées. "
-            "Termine en proposant de refaire LE MÊME sujet en visant 1 ou 2 points précis (le réenregistrement "
-            "est la clé de l'entraînement), ou de passer à un autre dialogue."
-        ),
-    })
+    await params.result_callback(
+        {
+            "title": d.get("title", ""),
+            "situation": d.get("description", ""),
+            "useful_expressions": d.get("expressions", []),
+            "instructions_for_you": TOOL_INSTRUCTIONS.get("finish_dialogue") or "",
+        }
+    )
 
 
-COACH_INSTRUCTIONS = """Tu es un partenaire d'entraînement pour le TCF Canada, expression orale, \
-TÂCHE 2 (exercice en interaction).
+# ---------------------------------------------------------------- tools
 
-CONTEXTE DE L'ÉPREUVE : l'utilisateur est le candidat. Préparation : 2 minutes. Échange : 3 min 30. \
-Le candidat parle en premier et c'est LUI qui pose les questions pour obtenir des informations dans une \
-situation de la vie quotidienne (inscription, location, renseignements…). L'interlocuteur répond. \
-Sont évalués : le vocabulaire et la grammaire, la fluidité, l'interaction et l'enchaînement des idées, \
-et l'adéquation sociale (tu/vous, politesse).
-
-TON COMPORTEMENT :
-- Parle toujours en français, avec des phrases courtes et naturelles. L'utilisateur peut te parler en anglais \
-pour choisir un exercice ou poser une question sur la méthode.
-- Au début, salue en une phrase, dis que tu es son partenaire pour la tâche 2, et demande quel dialogue il veut \
-pratiquer.
-- S'il demande un dialogue (par numéro ou par titre), appelle start_dialogue.
-- S'il ne sait pas lequel choisir ou demande la liste, appelle list_dialogues.
-- Quand l'échange est terminé, ou s'il dit « stop » ou « bilan », appelle finish_dialogue.
-- Hors exercice, tu peux répondre brièvement à des questions de méthode (formules utiles, enchaînements, \
-réactions, gestion du stress) en restant concis.
-- Ne joue un rôle qu'après avoir appelé start_dialogue."""
+TOOL_HANDLERS = {
+    "list_dialogues": lambda params: list_dialogues(params),
+    "start_dialogue": lambda params: start_dialogue(
+        params, dialogue=str(params.arguments.get("dialogue", ""))
+    ),
+    "finish_dialogue": lambda params: finish_dialogue(params),
+}
 
 
-tools = [list_dialogues, start_dialogue, finish_dialogue]
+def _build_tool_schemas() -> list[FunctionSchema]:
+    """Build tool schemas from instructions.json, wired to the handlers above.
+
+    The JSON file is the single source of truth for names, descriptions, and
+    parameter descriptions; ``TOOL_HANDLERS`` only supplies the behaviour.
+    """
+    missing = sorted(set(TOOL_CONFIG) - set(TOOL_HANDLERS))
+    if missing:
+        raise RuntimeError(
+            f"instructions.json defines tools with no implementation: {missing}"
+        )
+
+    schemas = []
+    for name, config in TOOL_CONFIG.items():
+        properties = {}
+        required = []
+        for arg in config.get("args", []):
+            properties[arg["name"]] = {
+                "type": "string",
+                "description": arg.get("desc", ""),
+            }
+            required.append(arg["name"])
+        schemas.append(
+            FunctionSchema(
+                name=name,
+                description=config.get("description", ""),
+                properties=properties,
+                required=required,
+                handler=TOOL_HANDLERS[name],
+            )
+        )
+    return schemas
+
+
+tools = _build_tool_schemas()
 
 
 # ---------------------------------------------------------------- run_bot
 
-async def run_bot(transport):
-    llm = BosonRealtimeLLMService(
-        url=os.environ["BOSON_REALTIME_URL"],
-        api_key=os.environ["BOSON_API_KEY"],
-        model=os.getenv("BOSON_REALTIME_MODEL", "higgs-realtime"),
-        voice="default",
-        instructions=COACH_INSTRUCTIONS,
-        tools=tools,
-        # Optional: get user transcripts as TranscriptionFrames
-        input_audio_transcription={"model": "higgs-stt-3.1", "language": "fr"},
-    )
+def _create_llm() -> BosonRealtimeLLMService:
+    missing = [
+        key
+        for key in ("BOSON_REALTIME_URL", "BOSON_API_KEY")
+        if not os.environ.get(key)
+    ]
+    if missing:
+        raise RuntimeError(
+            f"Missing environment variables: {', '.join(missing)}. "
+            "Copy .env.example to .env and fill in your Boson credentials."
+        )
+
+    kwargs = {
+        "url": os.environ["BOSON_REALTIME_URL"],
+        "api_key": os.environ["BOSON_API_KEY"],
+        "model": os.getenv(
+            "BOSON_REALTIME_MODEL", RUNTIME.get("model", "higgs-realtime")
+        ),
+        "voice": RUNTIME.get("voice", "default"),
+        "instructions": COACH_INSTRUCTIONS,
+        "tools": tools,
+    }
+    # Optional: get user transcripts as TranscriptionFrames
+    transcription = RUNTIME.get("input_audio_transcription")
+    if transcription:
+        kwargs["input_audio_transcription"] = transcription
+    # Optional sampling temperature (lower = follows the instructions more strictly)
+    temperature = RUNTIME.get("temperature")
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+    return BosonRealtimeLLMService(**kwargs)
+
+
+async def run_bot(transport, runner_args: RunnerArguments | None = None):
+    llm = _create_llm()
 
     context = LLMContext(tools=tools)  # same tool list as the service
     user_aggregator, assistant_aggregator = LLMContextAggregatorPair(
@@ -205,18 +298,18 @@ async def run_bot(transport):
 
     @transport.event_handler("on_client_disconnected")
     async def on_client_disconnected(transport, client):
-        await worker.cancel()
+        await worker.cancel(reason="client disconnected")
 
-    from pipecat.workers.runner import WorkerRunner
-
-    runner = WorkerRunner()
+    runner = WorkerRunner(
+        handle_sigint=runner_args.handle_sigint if runner_args else True
+    )
     await runner.add_workers(worker)
     await runner.run()
 
 
 async def bot(runner_args: RunnerArguments):
     transport = await create_transport(runner_args, transport_params)
-    await run_bot(transport)
+    await run_bot(transport, runner_args)
 
 
 if __name__ == "__main__":

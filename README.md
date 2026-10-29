@@ -59,13 +59,19 @@ Built on [pipecat-ai](https://github.com/pipecat-ai/pipecat) and the [`pipecat-b
 uv run python bot.py
 ```
 
-or, equivalently, via the pipecat runner:
+That starts the Pipecat development runner (a FastAPI server) on
+<http://localhost:7860>. Open <http://localhost:7860/client/> in your browser and
+click **Connect** to start a voice session.
+
+Useful flags:
 
 ```sh
-uv run pipecat run
+uv run python bot.py --host 0.0.0.0 --port 8080   # bind elsewhere
+uv run python bot.py -t webrtc                     # restrict to the WebRTC transport
 ```
 
-Once running, open the WebRTC transport URL in a browser and click **Connect**. The coach greets you in French, asks which dialogue you want to practice, and the session begins.
+The coach greets you in English, asks which dialogue you want to practice, then
+runs the roleplay in French and the debrief in English.
 
 ## Project layout
 
@@ -73,11 +79,11 @@ Once running, open the WebRTC transport URL in a browser and click **Connect**. 
 | --- | --- |
 | `bot.py` | Pipecat pipeline: realtime LLM service (`BosonRealtimeLLMService`), dialogue tools (`list_dialogues`, `start_dialogue`, `finish_dialogue`), WebRTC transport |
 | `dialogues/*.json` | Practice dialogues (title, description, roles, turns, expressions) |
-| `instructions.json` | Coach instructions, tool briefings, and runtime config (model, voice, transcription) |
-| `instructions_loader.py` | Loads the coach instructions and runtime configuration from `instructions.json` |
+| `instructions.json` | Single source of truth: coach prompt, tool descriptions/args, per-tool briefings (`instructions_for_you`), and runtime config (model, voice, transcription, transport) |
+| `instructions_loader.py` | Loads `instructions.json` for `bot.py` |
 | `main.py` | Minimal entry-point stub |
 | `.env` | Secrets (Boson API key, realtime URL, model) — never commit |
 
 ## How it works
 
-`bot.py` builds a pipecat pipeline: WebRTC audio in → user context aggregator → `BosonRealtimeLLMService` → WebRTC audio out → assistant context aggregator. The service is configured with a French coach system prompt, three function tools, and French input transcription. When the user picks a dialogue, `start_dialogue` loads it from `dialogues/`, briefs the candidate, and instructs the model to play only the interlocutor. When the exchange ends, `finish_dialogue` switches the model out of role and produces the debrief.
+`bot.py` builds a pipecat pipeline: WebRTC audio in → user context aggregator → `BosonRealtimeLLMService` → WebRTC audio out → assistant context aggregator. The coach prompt, the three tool descriptions and arguments, and the runtime settings are all read from `instructions.json`; `bot.py` supplies the behaviour behind `list_dialogues`, `start_dialogue`, and `finish_dialogue`, and each returns its `instructions_for_you` text with its result so the model gets the step-specific briefing. When the user picks a dialogue, `start_dialogue` loads it from `dialogues/`; when the exchange ends, `finish_dialogue` collects the expressions and briefing for the debrief.

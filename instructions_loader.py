@@ -1,10 +1,10 @@
 """Instructions loader for AI coach configuration."""
 import json
-import os
 from pathlib import Path
 
-# Path to the instructions JSON file
-INSTRUCTIONS_PATH = Path("instructions.json")
+# Path to the instructions JSON file, resolved next to this module so the bot
+# works no matter which directory it is launched from.
+INSTRUCTIONS_PATH = Path(__file__).resolve().parent / "instructions.json"
 
 
 def load_instructions():
@@ -39,27 +39,31 @@ def get_coach_instructions():
     return instructions["coach_instructions"]["text"]
 
 
+def get_tool_config():
+    """Get the tool definitions (name, description, args) from the JSON file.
+
+    Returns:
+        list[dict]: Tool definitions in the order they appear in the file.
+    """
+    return load_instructions().get("tools", [])
+
+
 def get_tool_instructions():
     """Get tool-specific instructions from JSON file.
 
     Returns:
-        tuple: (start_briefing, finish_briefing) instructions.
+        dict[str, str | None]: Mapping of tool name to its ``instructions_for_you``
+        text, e.g. ``{"start_dialogue": "...", "finish_dialogue": "..."}``.
 
     Raises:
         FileNotFoundError: If the instructions JSON file doesn't exist.
         json.JSONDecodeError: If the JSON file is malformed.
-        KeyError: If the expected keys are not present in the JSON.
     """
-    instructions = load_instructions()
-    tools = instructions.get("tools", [])
-
-    # start_dialogue is typically at index 1
-    start_briefing = tools[1]["instructions_for_you"] if len(tools) > 1 else None
-
-    # finish_dialogue is typically at index 2
-    finish_briefing = tools[2]["instructions_for_you"] if len(tools) > 2 else None
-
-    return start_briefing, finish_briefing
+    return {
+        tool.get("name"): tool.get("instructions_for_you")
+        for tool in get_tool_config()
+        if tool.get("name")
+    }
 
 
 def get_runtime_config():
@@ -71,7 +75,6 @@ def get_runtime_config():
     Raises:
         FileNotFoundError: If the instructions JSON file doesn't exist.
         json.JSONDecodeError: If the JSON file is malformed.
-        KeyError: If the expected keys are not present in the JSON.
     """
     instructions = load_instructions()
     return instructions.get("runtime", {})

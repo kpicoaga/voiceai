@@ -3,6 +3,19 @@
     "task": "tache2",
     "topic": "4. Education",
     "description": "Appel téléphonique pour s'inscrire à des cours de français du soir pour préparer l'examen TCF Canada.",
+    "register": "vous",
+    "consigne": [
+        "Ouvrir poliment avec le contexte de l'appel",
+        "Demander la disponibilité des places",
+        "Demander les horaires",
+        "Demander le niveau minimum / le test de positionnement",
+        "Demander le prix et ce qu'il comprend",
+        "Réagir au prix et demander les réductions ou le paiement en plusieurs fois",
+        "Demander une solution en cas d'absence (rattrapage)",
+        "Demander les documents et la date limite d'inscription",
+        "Récapituler les informations",
+        "Clôturer poliment"
+    ],
     "labels": {
         "E": "Interlocuteur",
         "C": "Candidat(e)"
