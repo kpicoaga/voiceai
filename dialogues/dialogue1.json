@@ -1,0 +1,317 @@
+{
+    "title": "Inscription aux cours de français",
+    "task": "tache2",
+    "topic": "4. Education",
+    "description": "Appel téléphonique pour s'inscrire à des cours de français du soir pour préparer l'examen TCF Canada.",
+    "labels": {
+        "E": "Interlocuteur",
+        "C": "Candidat(e)"
+    },
+    "roles": {
+        "Speaker 1": "E",
+        "Speaker 2": "C"
+    },
+    "expressions": [
+        "je vous appelle parce que",
+        "je voudrais",
+        "Est-ce que",
+        "ça m'arrange",
+        "c'est bien ça",
+        "C'est noté",
+        "Et à propos",
+        "c'est bon à savoir",
+        "Donc si je comprends bien",
+        "D'accord",
+        "Justement",
+        "ça me semble un peu cher",
+        "Est-ce qu'il existe des réductions",
+        "ça change tout pour moi",
+        "Très bien, je note",
+        "Et pour l'inscription",
+        "Donc en résumé",
+        "Bonne journée"
+    ],
+    "templateBank": {
+        "title": "Boîte à outils — Inscription aux cours de français",
+        "sub": "Structures utiles extraites du dialogue TCF (B1/B2) : ouvrir, enchaîner, réagir, gérer l'imprévu et repérer la grammaire.",
+        "toggle": "Afficher les structures utiles",
+        "categories": [
+            {
+                "name": "L'Ouverture & Clôture",
+                "icon": "🚪",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Bonjour, je vous appelle parce que je voudrais prendre des cours de français du soir pour préparer un examen. Est-ce que vous avez des places pour la prochaine session ?",
+                        "note": "Ouverture réelle du dialogue — contexte + permission + demande polie",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Centre de langues International, bonjour ! Que puis-je faire pour vous ?",
+                        "note": "Formule d'accueil du centre — invite à formuler la demande",
+                        "role": "e"
+                    },
+                    {
+                        "fr": "Parfait, merci beaucoup pour toutes ces informations ! Je fais le test cette semaine et je vous rappelle pour confirmer mon inscription. Bonne journée !",
+                        "note": "Clôture réelle du dialogue — remerciement + suite + salutation",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Enchaînements",
+                "icon": "🔗",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "C'est noté. Et à propos du niveau, il y a un niveau minimum pour s'inscrire, ou peut-on commencer en étant débutant ?",
+                        "note": "« Et à propos » — enchaîner vers un nouveau thème",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait, c'est bon à savoir. Donc si je comprends bien, le test est pour trouver le groupe qui correspond à mon niveau. Il est gratuit, ce test ?",
+                        "note": "« Donc si je comprends bien » — résumé/vérification",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'accord, je préférerais le faire en ligne, ce sera plus simple. Justement, et pour les tarifs, quel est le prix de la session ?",
+                        "note": "« Justement » — transition vers le thème clé",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Très bien, je note. Et pour l'inscription, quels documents on doit donner, et jusqu'à quand on peut s'inscrire ?",
+                        "note": "« Et pour l'inscription » — enchaîner sur le motif",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'accord. Donc en résumé : je fais le test en ligne, j'envoie ma pièce d'identité et une photo, et je paie en trois fois avant la fin du mois. C'est bien ça ?",
+                        "note": "« Donc en résumé » — récapitulatif final + confirmation",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Réactions",
+                "icon": "😌",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Ah, très bien, ça m'arrange.",
+                        "note": "Accord + convenance personnelle",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est noté.",
+                        "note": "Accusé de réception",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait, c'est bon à savoir.",
+                        "note": "Information utile reçue",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Hmm, ça me semble un peu cher, honnêtement.",
+                        "note": "Réaction polie sur le prix — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, tant mieux ! Ça change tout pour moi.",
+                        "note": "Soulagement — semblable à « ça me rassure »",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "L'Imprévu",
+                "icon": "⚠️",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Et si un mardi je ne suis pas disponible, il y a un cours de rattrapage ?",
+                        "note": "Hypothèse (si + présent) — question de secours",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Est-ce qu'il existe des réductions, par exemple pour les étudiants, ou est-ce qu'on peut payer en plusieurs fois ?",
+                        "note": "Négociation polie (alternative + paiement échelonné)",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "La Grammaire Utile",
+                "icon": "📘",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "je voudrais prendre des cours de français du soir pour préparer un examen.",
+                        "note": "Conditionnel de politesse (je voudrais + infinitif)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'accord, je préférerais le faire en ligne, ce sera plus simple.",
+                        "note": "Conditionnel présent (préférerais) puis futur simple (sera)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Est-ce qu'il existe des réductions, par exemple pour les étudiants, ou est-ce qu'on peut payer en plusieurs fois ?",
+                        "note": "Question avec « Est-ce que » — registre courant (Est-ce qu'il existe / est-ce qu'on peut)",
+                        "role": "c"
+                    }
+                ]
+            }
+        ]
+    },
+    "model": "google/gemini-3.8-flash-lite-tts",
+    "speakers": {
+        "Speaker 1": {
+            "voice": "Kore"
+        },
+        "Speaker 2": {
+            "voice": "Puck"
+        }
+    },
+    "turns": [
+        {
+            "speaker": "Speaker 1",
+            "text": "Centre de langues International, bonjour ! Que puis-je faire pour vous ?",
+            "en": "Hello, this is Centre de langues International. How can I help you?",
+            "es": "Centro de langua Internacional, bon shur. Ke puis ke far pa reu u?",
+            "note": "OUVERTURE: Formule d'accueil \"Bonjour, je vous appelle parce que...\" - établit le contexte et demande la permission de questionner"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Bonjour, je vous appelle parce que je voudrais prendre des cours de français du soir pour préparer un examen. Est-ce que vous avez des places pour la prochaine session ?",
+            "en": "Hello, I am calling because I would like to take evening French courses to prepare for an exam. Do you have any spots available for the next session?",
+            "es": "Bonshúr, yú vú apél pársk kú yú vudré prondr de cour de fransé dú suár pur preparé un égzamén. Es-kú vú avé de plas pur la proshén sesión ?",
+            "note": "OUVERTURE: \"Je vous appelle parce que\" - contexte et objet de l'appel; \"Est-ce que\" - demande polie"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Oui, bien sûr. Il nous reste quelques places pour la session qui commence le mois prochain.",
+            "en": "Yes, of course. We still have a few spots available for the session starting next month.",
+            "es": "Uí, bien shur. Il nu resta ke keplas pur la sesión ke komansa el mua próximo.",
+            "note": "RESPONSE: Confirmation positive, information de disponibilité"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Ah, très bien, ça m'arrange. Et quels sont les horaires exactement ? Les cours ont lieu en soirée, c'est bien ça ?",
+            "en": "Great, that works for me. And what are the exact hours? The courses take place in the evening, right?",
+            "es": "Ah, tré bien, sa maranj. E kel son lé zorár egzaktman? Lé cour ont liu an sovaré, sé bain sa?",
+            "note": "ENCHAINEMENT: \"Et\" - relance; \"c'est bien ça?\" - vérification/confirmation"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Oui, deux fois par semaine, le mardi et le jeudi, de dix-huit heures trente à vingt heures.",
+            "en": "Yes, twice a week, on Tuesday and Thursday, from 6:30 PM to 8:00 PM.",
+            "es": "Uí, doisf já semana, le martés e le juefui, de dis-uit eur tred a vent eur.",
+            "note": "INFORMATION: Horaires précis"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "C'est noté. Et à propos du niveau, il y a un niveau minimum pour s'inscrire, ou peut-on commencer en étant débutant ?",
+            "en": "Noted. And about the level, is there a minimum level to register, or can we start even as a beginner?",
+            "es": "Se noté. E a propo dü nivó, il y a un nivó mínimún pur sénskrir, u pe-t-on komansé an étant débyan?",
+            "note": "ENCHAINEMENT: \"Et à propos\" - nouveau thème, le niveau; question prérequis"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Il n'y a pas de niveau minimum, mais nous faisons passer un test de positionnement pour placer chaque personne dans le bon groupe.",
+            "en": "There is no minimum level, but we give each person a placement test to place them in the right group.",
+            "es": "Il ni a pa de nivel mínim, mu nu fason pasá un test de posiciónman pa plasá cada persona dan el bon grup.",
+            "note": "INFORMATION: Test de positionnement"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Parfait, c'est bon à savoir. Donc si je comprends bien, le test est pour trouver le groupe qui correspond à mon niveau. Il est gratuit, ce test ?",
+            "en": "Great, good to know. So if I understand correctly, the test is to find the group that matches my level. Is the test free?",
+            "es": "Parfait, se bon a saver. Donc si kompran bien, le test ser a trov el grup ki korason a mon nivel. Il es gratui, se test?",
+            "note": "ENCHAINEMENT: \"Donc si je comprends bien\" - résumé/check; question gratuité"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Oui, le test est gratuit et il dure environ quarante minutes. Vous pouvez le faire en ligne ou sur place.",
+            "en": "Yes, the test is free and it takes about forty minutes. You can do it online or in person.",
+            "es": "Uí, le test es gratui e il dura aproximadamente cuarenta minutos. Vou poné le fer en lign u sur plas.",
+            "note": "INFORMATION: Durée et options"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "D'accord, je préférerais le faire en ligne, ce sera plus simple. Justement, et pour les tarifs, quel est le prix de la session, et qu'est-ce que le prix comprend ?",
+            "en": "Okay, I would prefer to do it online, that will be simpler. By the way, about the rates, what is the price of the session and what does the price include? / What is included in the price?",
+            "es": "Daccord, je preféreré le fer en lign, se sera plu siml. Justaman, e pour les tarif, kel es el pri de la sesión, e kes ke se inklu dan se pri?",
+            "note": "ENCHAINEMENT: \"Justement\" - transition tarif; question inclusions"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est quatre cent cinquante dollars pour douze semaines, et ça comprend tous les supports de cours.",
+            "en": "It is four hundred fifty dollars for twelve weeks, and it includes all course materials.",
+            "es": "Se katr sen sankant dólares pa douz semanas, e sa comprende tu les suport de kors.",
+            "note": "INFORMATION: Prix et inclusions"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Hmm, ça me semble un peu cher, honnêtement. Est-ce qu'il existe des réductions, par exemple pour les étudiants, ou est-ce qu'on peut payer en plusieurs fois ?",
+            "en": "Hmm, that seems a bit expensive to me, honestly. Are there any discounts, for example for students, or can we pay in several installments?",
+            "es": "Em, sa me sanbl un peu cher, onetman. Es-kü il ézgist de réduksion, par ézanpl pur lé étudyan, u es-kon peu péyé an plizier fua?",
+            "note": "RÉACTION: \"Hmm, ça me semble un peu cher, honnêtement\" - phrase banque; question réductions"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Oui, nous proposons un paiement en trois fois, sans frais supplémentaires.",
+            "en": "Yes, we offer payment in three installments, without additional fees.",
+            "es": "Uí, nu propopan un peiman en tres veces, san fra suplementar.",
+            "note": "INFORMATION: Option paiement"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Ah, tant mieux ! Ça change tout pour moi. Et si un mardi je ne suis pas disponible, il y a un cours de rattrapage ?",
+            "en": "Ah, great! That changes everything for me. And if one Tuesday I am not available, is there a make-up class?",
+            "es": "Ah, se rasurá, sa sanje tu pa mi. E si un martés je ne sui pa disponible le martés, es ke il yá u autra formulo u un kors de ratrapaj?",
+            "note": "RÉACTION: \"Ah, tant mieux!\" - semblable à \"Ça me rassure\"; ENCHAINEMENT: \"Et si un mardi\" - question alternative disponibilité"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Vous pouvez suivre le même cours le samedi matin, ou rattraper avec les enregistrements.",
+            "en": "You can follow the same course on Saturday morning, or make it up with recordings.",
+            "es": "Vou poné suivr le mem kors le samdi matin, u ratrapá avé les enregistramán.",
+            "note": "INFORMATION: Alternative offerte"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Très bien, je note. Et pour l'inscription, quels documents on doit donner, et jusqu'à quand on peut s'inscrire ?",
+            "en": "Very well, noted. And about registration, what documents do we need to provide, and until when can we register?",
+            "es": "Trés bien, je noté. E koncernan l’inskrision, kel dokument fuít furnir, e ju-ska kan pon se inskrir?",
+            "note": "ENCHAINEMENT: \"Et pour l'inscription\" - motif inscription; question documents"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Il faut une pièce d'identité et une photo, et vous avez jusqu'à la fin du mois.",
+            "en": "You need an ID card and a photo, and you have until the end of the month.",
+            "es": "Il fa una pis didentitad e una foto, e vou avé ju-ska la fin du mua.",
+            "note": "INFORMATION: Documents requis + date limite"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "D'accord. Donc en résumé : je fais le test en ligne, j'envoie ma pièce d'identité et une photo, et je paie en trois fois avant la fin du mois. C'est bien ça ?",
+            "en": "Okay. So to sum up: I take the test online, I send my ID card and a photo, and I pay in three installments before the end of the month. Is that right?",
+            "es": "Dacor. Donc en rézumé: yé fé le test an liny, yé anvoi ma pié didentité é un foto, é yé péy an tré fua avan la fin dü mua. Sé bain sa?",
+            "note": "ENCHAINEMENT: \"Donc en résumé\" - récapitulatif final + question confirmation"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est exactement ça.",
+            "en": "That is exactly right.",
+            "es": "Se eksaktaman sa.",
+            "note": "CONFIRMATION"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Parfait, merci beaucoup pour toutes ces informations ! Je fais le test cette semaine et je vous rappelle pour confirmer mon inscription. Bonne journée !",
+            "en": "Perfect, thank you very much for all this information! I will take the test this week and I will call you back to confirm my registration. Have a good day!",
+            "es": "Parfait. Meri mucho por tu se presión, je vais fer el test des esta semana e vou rapeli pa konfirman mi inscripción. Bon jurne!",
+            "note": "RÉACTION: \"Parfait\"; FERMETURE: \"Bonne journée!\""
+        }
+    ]
+}
