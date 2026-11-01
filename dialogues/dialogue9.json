@@ -1,0 +1,383 @@
+{
+    "title": "Demander des renseignements à un voisin sur l'immeuble et le quartier – TCF Canada B2 Tâche 2",
+    "task": "tache2",
+    "topic": "1. Logement / Cadre de vie",
+    "description": "Conversation avec un voisin pour obtenir des renseignements sur la vie dans l'immeuble et dans le quartier (ambiance, règles, charges, activités, commerces, transports, espaces verts).",
+    "register": "vous",
+    "consigne": [
+        "Ouvrir poliment avec le contexte (nouvel arrivant)",
+        "Demander comment sont les relations entre voisins / l'ambiance",
+        "Demander les règles concernant le bruit et les parties communes",
+        "Demander si les frais d'entretien sont compris dans le loyer",
+        "Demander s'il y a des activités entre habitants",
+        "Demander si les nouveaux arrivants peuvent participer",
+        "Demander si le quartier est calme",
+        "Demander quels commerces sont à proximité",
+        "Demander la fréquence des transports en commun",
+        "Demander s'il y a un parc ou un endroit pour faire du sport",
+        "Récapituler les informations",
+        "Clôturer poliment"
+    ],
+    "labels": {
+        "E": "Voisin(e)",
+        "C": "Candidat(e)"
+    },
+    "roles": {
+        "Speaker 1": "C",
+        "Speaker 2": "E"
+    },
+    "expressions": [
+        "je viens d'emménager",
+        "est-ce que je pourrais",
+        "avec plaisir",
+        "tout d'abord",
+        "c'est rassurant",
+        "je comprends",
+        "je le ferai",
+        "j'aimerais aussi",
+        "bien sûr",
+        "parfait",
+        "justement",
+        "c'est très pratique",
+        "merci pour le conseil",
+        "si j'ai bien compris",
+        "merci pour toutes ces informations",
+        "avec plaisir",
+        "n'hésitez pas",
+        "bonne journée"
+    ],
+    "templateBank": {
+        "title": "Boîte à outils — Renseignements sur l'immeuble et le quartier",
+        "sub": "Structures utiles extraites du dialogue TCF (B1/B2) : ouvrir, enchaîner, réagir, gérer l'imprévu et repérer la grammaire.",
+        "toggle": "Afficher les structures utiles",
+        "categories": [
+            {
+                "name": "L'Ouverture & Clôture",
+                "icon": "🚪",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Bonjour ! Je viens d'emménager dans l'immeuble et je ne connais pas encore le quartier. Comme vous y habitez depuis quelque temps, est-ce que je pourrais vous poser quelques questions ?",
+                        "note": "Ouverture réelle du dialogue — contexte + justification + demande polie (conditionnel)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Bien sûr, avec plaisir. Je vous écoute.",
+                        "note": "Formule d'accueil du voisin — invite à formuler les questions",
+                        "role": "e"
+                    },
+                    {
+                        "fr": "Merci, c'est très gentil. Bonne journée et à bientôt !",
+                        "note": "Clôture réelle du dialogue — remerciement + salutation",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Enchaînements",
+                "icon": "🔗",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Tout d'abord, comment sont les relations entre les voisins ? L'ambiance est-elle plutôt conviviale ?",
+                        "note": "« Tout d'abord » — ouvrir la première question ; inversion pour la deuxième",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est rassurant. Y a-t-il des règles particulières concernant le bruit ou l'utilisation des parties communes ?",
+                        "note": "« C'est rassurant » — réaction ; « Y a-t-il » — question avec inversion",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Je comprends. Et les frais d'entretien sont-ils compris dans le loyer ou faut-il payer un supplément ?",
+                        "note": "« Je comprends » — accusé de réception ; « sont-ils compris » + « faut-il » — double question",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Je le ferai. J'aimerais aussi faire connaissance avec les habitants. Organisez-vous parfois des activités ?",
+                        "note": "« J'aimerais aussi » — enchaîner vers un nouveau thème ; question avec intonation",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Justement, quels commerces trouve-t-on à proximité ? Peut-on faire ses courses à pied ?",
+                        "note": "« Justement » — transition vers le thème des commerces",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est très pratique. Et pour les transports, les bus passent-ils régulièrement, y compris le soir ?",
+                        "note": "« Et pour... » — enchaîner sur le thème des transports",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Merci pour le conseil. Y a-t-il aussi un parc ou un endroit pour faire du sport ?",
+                        "note": "« Y a-t-il aussi » — ajouter une question",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est exactement ce que je cherchais. Si j'ai bien compris, l'immeuble est accueillant et les principaux services sont accessibles à pied. Merci pour toutes ces informations, elles vont beaucoup m'aider à m'installer.",
+                        "note": "« Si j'ai bien compris » — récapitulatif final + remerciement",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Réactions",
+                "icon": "😌",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "C'est rassurant.",
+                        "note": "Soulagement — semblable à « ça me rassure »",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Je comprends.",
+                        "note": "Accusé de réception / compréhension",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Je le ferai.",
+                        "note": "Engagement / prise en compte du conseil",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait.",
+                        "note": "Satisfaction",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est très pratique.",
+                        "note": "Évaluation positive",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est exactement ce que je cherchais.",
+                        "note": "Satisfaction totale — phrase banque",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "L'Imprévu",
+                "icon": "⚠️",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Les nouveaux arrivants peuvent-ils y participer ?",
+                        "note": "Question avec inversion — demander une autorisation",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Concernant le quartier, est-il plutôt calme ? Je travaille parfois à la maison et j'aimerais éviter trop de bruit.",
+                        "note": "« Concernant » + justification personnelle",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "La Grammaire Utile",
+                "icon": "📘",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "est-ce que je pourrais vous poser quelques questions ?",
+                        "note": "Conditionnel de politesse (pourrais + infinitif)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "L'ambiance est-elle plutôt conviviale ?",
+                        "note": "Question avec inversion (est-elle)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Y a-t-il des règles particulières concernant le bruit ou l'utilisation des parties communes ?",
+                        "note": "Question impersonnelle avec « y a-t-il »",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "les frais d'entretien sont-ils compris dans le loyer ou faut-il payer un supplément ?",
+                        "note": "Inversion (sont-ils) + verbe impersonnel (faut-il)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Si j'ai bien compris, l'immeuble est accueillant et les principaux services sont accessibles à pied.",
+                        "note": "Hypothèse (si + passé composé) + récapitulatif",
+                        "role": "c"
+                    }
+                ]
+            }
+        ]
+    },
+    "model": "google/gemini-3.8-flash-lite-tts",
+    "speakers": {
+        "Speaker 1": {
+            "voice": "Puck"
+        },
+        "Speaker 2": {
+            "voice": "Kore"
+        }
+    },
+    "turns": [
+        {
+            "speaker": "Speaker 1",
+            "text": "Bonjour ! Je viens d'emménager dans l'immeuble et je ne connais pas encore le quartier. Comme vous y habitez depuis quelque temps, est-ce que je pourrais vous poser quelques questions ?",
+            "en": "Hello! I have just moved into the building and I don't know the neighborhood yet. Since you have been living here for some time, could I ask you a few questions?",
+            "es": "Bonshúr! Yú vién demenajé dan l'imobl e yú ne koné pa ankor le kartié. Kom vú zí abit depu kélke tan, es-kú yú puré vú pozé kélke késtion?",
+            "note": "OUVERTURE: \"Je viens d'emménager\" — contexte; \"est-ce que je pourrais\" — conditionnel de politesse"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Bien sûr, avec plaisir. Je vous écoute.",
+            "en": "Of course, with pleasure. I'm listening.",
+            "es": "Bien shur, avék plézir. Yú vú zékut.",
+            "note": "RÉPONSE: Accueil favorable — invite à poser les questions"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Tout d'abord, comment sont les relations entre les voisins ? L'ambiance est-elle plutôt conviviale ?",
+            "en": "First of all, how are the relations between the neighbors? Is the atmosphere rather friendly?",
+            "es": "Tú dabor, komán son lé relasión antre lé voazin? L'anbians es-t-el plutó konvivial?",
+            "note": "ENCHAINEMENT: \"Tout d'abord\" — première question; inversion \"est-elle\""
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Oui, les gens sont accueillants. On se salue et on s'entraide, tout en respectant la tranquillité de chacun.",
+            "en": "Yes, people are welcoming. We greet each other and help each other, while respecting everyone's peace and quiet.",
+            "es": "Uí, lé zhan son akéyan. On se salu e on santréd, tú an respektán la trankilité de shakun.",
+            "note": "INFORMATION: Ambiance conviviale + respect de la tranquillité"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est rassurant. Y a-t-il des règles particulières concernant le bruit ou l'utilisation des parties communes ?",
+            "en": "That's reassuring. Are there any particular rules regarding noise or the use of common areas?",
+            "es": "Se rasurán. I a-t-il dé règ particular koncernán le brui u l'utilizasión dé parti komun?",
+            "note": "RÉACTION: \"C'est rassurant\" — soulagement; ENCHAINEMENT: \"Y a-t-il\" — question avec inversion"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Il faut éviter le bruit après vingt-deux heures et garder l'entrée et les escaliers propres. La cour est accessible à tous, à condition de la laisser rangée.",
+            "en": "You must avoid noise after 10 PM and keep the entrance and stairs clean. The courtyard is accessible to everyone, provided it is left tidy.",
+            "es": "Il fo évité le brui apré vin-deu zor e gardé l'antré e lé zeskalié propr. La kur es aksesibl a tú, a kondisión de la lésé ranjé.",
+            "note": "INFORMATION: Règles de bruit et de propreté"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Je comprends. Et les frais d'entretien sont-ils compris dans le loyer ou faut-il payer un supplément ?",
+            "en": "I understand. And are the maintenance costs included in the rent, or do we have to pay extra?",
+            "es": "Yú kompran. E lé fré d'antretién son-t-il kompri dan le loyé u fo-t-il péyé un suplémán?",
+            "note": "ENCHAINEMENT: \"Je comprends\" — transition; \"sont-ils compris\" + \"faut-il\" — double question"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Les charges courantes sont généralement comprises. Pour les frais exceptionnels, mieux vaut vérifier votre contrat avec votre propriétaire.",
+            "en": "The regular charges are generally included. For exceptional costs, it's better to check your contract with your landlord.",
+            "es": "Lé sharj kurant son zhenéralman kompriz. Pur lé fré eksépsionel, mieu vo vérifié vótr kontra avék vótr propritéir.",
+            "note": "INFORMATION: Charges comprises + conseil de vérification"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Je le ferai. J'aimerais aussi faire connaissance avec les habitants. Organisez-vous parfois des activités ?",
+            "en": "I will do that. I would also like to get to know the residents. Do you sometimes organize activities?",
+            "es": "Yú le feré. Yémeré osi fer konésans avék lé zhabitán. Organizé-vú parfua dé zaktivité?",
+            "note": "ENCHAINEMENT: \"J'aimerais aussi\" — nouveau thème; question avec intonation"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Oui, nous faisons une rencontre dans la cour au début de l'été et une réunion des résidents deux fois par an.",
+            "en": "Yes, we hold a gathering in the courtyard at the beginning of summer and a residents' meeting twice a year.",
+            "es": "Uí, nu fezon un rankontr dan la kur o débu de l'été e un réunión dé rézidán deu fua par an.",
+            "note": "INFORMATION: Activités de l'immeuble"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Les nouveaux arrivants peuvent-ils y participer ?",
+            "en": "Can new arrivals take part?",
+            "es": "Lé nuvo zarriván peuv-t-il i partisipé?",
+            "note": "ENCHAINEMENT: Question avec inversion — autorisation"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Bien sûr ! Vous pourrez rencontrer les voisins et même proposer des idées. La prochaine réunion devrait avoir lieu le mois prochain.",
+            "en": "Of course! You will be able to meet the neighbors and even suggest ideas. The next meeting should take place next month.",
+            "es": "Bien shur! Vú puré rankontré lé voazin e mem propozé dé zidé. La proshén réunión devré avuar lieu le mua proshén.",
+            "note": "INFORMATION: Participation des nouveaux + date de la prochaine réunion"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Parfait. Concernant le quartier, est-il plutôt calme ? Je travaille parfois à la maison et j'aimerais éviter trop de bruit.",
+            "en": "Perfect. Regarding the neighborhood, is it rather quiet? I sometimes work from home and I would like to avoid too much noise.",
+            "es": "Parfè. Konsernán le kartié, es-t-il plutó kalm? Yú travay parfua a la mezon e yémeré évité tro de brui.",
+            "note": "ENCHAINEMENT: \"Concernant\" + justification personnelle"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Il est assez calme, surtout le soir. Le samedi matin, il y a un peu d'animation à cause du marché, mais cela reste agréable.",
+            "en": "It is fairly quiet, especially in the evening. On Saturday morning, there is a bit of activity because of the market, but it remains pleasant.",
+            "es": "Il é asé kalm, surtú le suar. Le samdi matin, il i a un peu d'animasión a koz dü marshé, mé sela rest agrÉabl.",
+            "note": "INFORMATION: Quartier calme + nuance du marché"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Justement, quels commerces trouve-t-on à proximité ? Peut-on faire ses courses à pied ?",
+            "en": "By the way, what shops are nearby? Can we do our shopping on foot?",
+            "es": "Justaman, kel komers trov-t-on a proksimité? Pe-t-on fer sé kurs a pié?",
+            "note": "ENCHAINEMENT: \"Justement\" — transition commerces"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Oui. Une boulangerie, une pharmacie et un supermarché se trouvent à moins de dix minutes à pied. Le marché a lieu le samedi.",
+            "en": "Yes. A bakery, a pharmacy and a supermarket are less than ten minutes away on foot. The market takes place on Saturdays.",
+            "es": "Uí. Un bulanzherí, un farmasí e un supermarshé se truv a muan de dis minút a pié. Le marshé a lieu le samdi.",
+            "note": "INFORMATION: Commerces de proximité"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est très pratique. Et pour les transports, les bus passent-ils régulièrement, y compris le soir ?",
+            "en": "That's very convenient. And regarding transport, do the buses run regularly, including in the evening?",
+            "es": "Se tré pratik. E pur lé transpor, lé büs pas-t-il régulierman, i kompri le suar?",
+            "note": "ENCHAINEMENT: \"Et pour\" — thème transports; inversion \"passent-ils\""
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "En journée, ils passent environ toutes les quinze minutes. Le soir, le service est moins fréquent, donc consultez les horaires avant de partir.",
+            "en": "During the day, they run about every fifteen minutes. In the evening, the service is less frequent, so check the schedule before leaving.",
+            "es": "An zhurné, il pas anviron tut lé kinz minút. Le suar, le servis é muan frekan, donk konsulté lé zorér avan de partir.",
+            "note": "INFORMATION: Fréquence des bus + conseil"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Merci pour le conseil. Y a-t-il aussi un parc ou un endroit pour faire du sport ?",
+            "en": "Thanks for the tip. Is there also a park or a place to do sports?",
+            "es": "Mersi pur le konséy. I a-t-il osi un park u un andrua pur fer dü spor?",
+            "note": "ENCHAINEMENT: \"Y a-t-il aussi\" — question supplémentaire"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Oui, le parc municipal est à cinq minutes. Il y a des espaces verts, une piste cyclable et des équipements sportifs.",
+            "en": "Yes, the municipal park is five minutes away. There are green spaces, a bike path and sports facilities.",
+            "es": "Uí, le park munisipal é a sink minút. Il i a dé zespas ver, un pist siklabl e dé zéquipmán sportif.",
+            "note": "INFORMATION: Parc et équipements"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est exactement ce que je cherchais. Si j'ai bien compris, l'immeuble est accueillant et les principaux services sont accessibles à pied. Merci pour toutes ces informations, elles vont beaucoup m'aider à m'installer.",
+            "en": "That's exactly what I was looking for. If I understood correctly, the building is welcoming and the main services are accessible on foot. Thank you for all this information, it will help me a lot to settle in.",
+            "es": "Se egzakteman se ke yú shershé. Si yé bien kompri, l'imobl é akéyan e lé prinsipó servis son aksesibl a pié. Mersi pur tut sé zinformasión, el von bosku m'édé a m'instalé.",
+            "note": "ENCHAINEMENT: \"Si j'ai bien compris\" — récapitulatif final + remerciement"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Avec plaisir ! Bienvenue dans l'immeuble. N'hésitez pas si vous avez d'autres questions.",
+            "en": "With pleasure! Welcome to the building. Don't hesitate if you have any other questions.",
+            "es": "Avék plézir! Bienvenü dan l'imobl. N'ezité pa si vú avé d'ótr késtion.",
+            "note": "RÉACTION: Accueil chaleureux + disponibilité"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Merci, c'est très gentil. Bonne journée et à bientôt !",
+            "en": "Thank you, that's very kind. Have a good day and see you soon!",
+            "es": "Mersi, se tré zhantí. Bon zhurné e a bientó!",
+            "note": "FERMETURE: Remerciement + salutation"
+        }
+    ]
+}

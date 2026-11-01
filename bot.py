@@ -12,6 +12,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from pipecat.adapters.schemas.function_schema import FunctionSchema
+from pipecat.adapters.schemas.tools_schema import ToolsSchema
 from pipecat.frames.frames import LLMRunFrame
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.processors.aggregators.llm_context import LLMContext
@@ -229,7 +230,9 @@ def _build_tool_schemas() -> list[FunctionSchema]:
     return schemas
 
 
-tools = _build_tool_schemas()
+# Wrapped so the set satisfies LLMContext's ``ToolsSchema`` parameter type;
+# the service and the context then advertise the exact same tool set.
+tools = ToolsSchema(standard_tools=_build_tool_schemas())
 
 
 # ---------------------------------------------------------------- run_bot
