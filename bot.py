@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from dotenv import load_dotenv
+from loguru import logger
 from pipecat.adapters.schemas.function_schema import FunctionSchema
 from pipecat.adapters.schemas.tools_schema import ToolsSchema
 from pipecat.frames.frames import LLMRunFrame
@@ -65,20 +66,32 @@ def _load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _dialogue_number(stem: str):
+    m = re.search(r"dialogue[\s_-]*0*(\d+)", stem, re.I)
+    if m:
+        return int(m.group(1))
+    nums = re.findall(r"\d+", stem)
+    return int(nums[-1]) if nums else None
+
+
 def _find_dialogue(query: str):
     files = sorted(DIALOGUE_DIR.glob("*.json"))
     q = (query or "").lower().strip()
     if not q:
         return None
+
     for f in files:                                  # exact name
         if f.stem.lower() == q:
             return f
-    m = re.search(r"\d+", q)                         # "dialogue 1", "number 1"
+
+    m = re.search(r"\d+", q)                         # "dialogue 9", "number 9"
     if m:
+        wanted = int(m.group())
         for f in files:
-            n = re.search(r"\d+", f.stem)
-            if n and int(n.group()) == int(m.group()):
+            if _dialogue_number(f.stem) == wanted:
                 return f
+        return None                                   # no text fallback for numbers
+
     for f in files:                                  # words from title/topic/description
         d = _load(f)
         haystack = " ".join(
@@ -117,6 +130,7 @@ async def start_dialogue(params: FunctionCallParams, dialogue: str) -> None:
         dialogue: Name, number, or title of the dialogue, e.g. "dialogue 1" or "1".
     """
     path = _find_dialogue(dialogue)
+    logger.info(f"start_dialogue(arg={dialogue!r}) -> {path.name if path else None}")
     if path is None:
         await params.result_callback(
             {
