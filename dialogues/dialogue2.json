@@ -1,0 +1,416 @@
+{
+    "title": "Ouverture de compte bancaire – TCF Canada B2 Tâche 2",
+    "task": "tache2",
+    "topic": "3. Démarches administratives / Banque",
+    "description": "Appel téléphonique pour ouvrir un compte courant avec la banque en ligne, en tant que nouvel arrivant au Canada : documents, frais, découvert, application mobile, offre de bienvenue, livret d'épargne.",
+    "register": "vous",
+    "consigne": [
+        "Ouvrir poliment avec le contexte (nouvel arrivant)",
+        "Demander les documents nécessaires",
+        "Demander le type de compte et les frais mensuels",
+        "Demander le découvert autorisé et ses conditions",
+        "Demander le fonctionnement de l'application mobile",
+        "Demander le délai d'ouverture et le dépôt initial",
+        "Gérer l'imprévu (absence de justificatif de domicile)",
+        "Demander les frais cachés (virements, retraits)",
+        "Demander les offres pour nouveaux arrivants",
+        "Demander l'ouverture d'un livret d'épargne",
+        "Récapituler les informations",
+        "Clôturer poliment"
+    ],
+    "labels": {
+        "E": "Interlocuteur",
+        "C": "Candidat(e)"
+    },
+    "roles": {
+        "Speaker 1": "E",
+        "Speaker 2": "C"
+    },
+    "expressions": [
+        "je vous appelle parce que",
+        "je souhaiterais",
+        "j'aimerais savoir",
+        "cela dit, j'aimerais d'abord comparer",
+        "c'est bon à savoir",
+        "dans ce cas, pourriez-vous me préciser",
+        "j'imagine que",
+        "ça me rassure",
+        "et à propos de",
+        "d'accord, je note",
+        "si je n'ai pas encore",
+        "tant mieux, ça change tout pour moi",
+        "j'aimerais aussi savoir",
+        "donc si je comprends bien",
+        "c'est bien ça",
+        "et dernière question",
+        "donc en résumé",
+        "j'ai bien tout compris"
+    ],
+    "templateBank": {
+        "title": "Boîte à outils — Ouverture de compte bancaire (B2)",
+        "sub": "Structures B2 : accord + relance, négociation polie, gestion de l'imprévu, récapitulatif.",
+        "toggle": "Afficher les structures utiles",
+        "categories": [
+            {
+                "name": "L'Ouverture & Clôture",
+                "icon": "🚪",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Bonjour, je vous appelle parce que je viens de m'installer au Canada et je souhaiterais ouvrir un compte courant. Est-ce que je pourrais avoir quelques informations à ce sujet ?",
+                        "note": "Contexte + conditionnel de politesse + demande d'informations",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Merci beaucoup pour toutes ces informations, elles vont beaucoup m'aider. Je prends rendez-vous en ligne et je passerai demain. Bonne journée !",
+                        "note": "Clôture : remerciement + intention + salutation",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Enchaînements (accord + question)",
+                "icon": "🔗",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Je m'appelle Kevin Picoaga. Et j'aimerais savoir quels documents je dois prévoir pour l'ouverture.",
+                        "note": "Identité + enchaînement « et j'aimerais savoir »",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est bon à savoir, merci. Dans ce cas, pourriez-vous me préciser s'il y a un découvert autorisé et quelles en sont les conditions ?",
+                        "note": "Accord + « dans ce cas » + conditionnel de politesse",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, ça me rassure. Et j'imagine que l'application mobile permet de gérer tout ça à distance, non ? Comment fonctionne-t-elle exactement ?",
+                        "note": "Accord + « j'imagine que…, non ? » + question de confirmation",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait, c'est exactement ce que je cherchais. Et à propos de l'ouverture, combien de temps faut-il prévoir, et y a-t-il un dépôt initial obligatoire ?",
+                        "note": "Satisfaction + « et à propos de » + double question",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'accord, je note. Et si je n'ai pas encore de justificatif de domicile, est-ce que c'est bloquant ?",
+                        "note": "Accord + hypothèse (si + présent) + question de secours",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, tant mieux, ça change tout pour moi. Dans ce cas, pourriez-vous me confirmer s'il y a des frais cachés ?",
+                        "note": "Soulagement + relance conditionnelle + vérification",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Très bien, je vous en remercie. Et j'aimerais aussi savoir s'il existe des offres pour les nouveaux arrivants.",
+                        "note": "Remerciement + « j'aimerais aussi savoir »",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait, je vais faire ça. Et dernière question : est-ce que je peux aussi ouvrir un livret d'épargne en même temps ?",
+                        "note": "Accord + « et dernière question »",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Réactions",
+                "icon": "😌",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "C'est bon à savoir, merci.",
+                        "note": "Information utile reçue",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, ça me rassure.",
+                        "note": "Soulagement",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Parfait, c'est exactement ce que je cherchais.",
+                        "note": "Satisfaction totale",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'accord, je note.",
+                        "note": "Prise en compte",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, tant mieux, ça change tout pour moi.",
+                        "note": "Soulagement renforcé",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "C'est une bonne nouvelle.",
+                        "note": "Réaction positive",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "L'Imprévu",
+                "icon": "⚠️",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Et si je n'ai pas encore de justificatif de domicile, est-ce que c'est bloquant ?",
+                        "note": "Hypothèse (si + présent) + question de secours",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Pourriez-vous me confirmer s'il y a des frais cachés, par exemple pour les virements internationaux ?",
+                        "note": "Conditionnel de politesse + demande de confirmation",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Donc si je comprends bien, je peux ouvrir le compte sur place dès demain, à condition d'apporter ma pièce d'identité, une attestation de résidence et le dépôt de 100 €. C'est bien ça ?",
+                        "note": "Reformulation + condition + vérification",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "La Grammaire Utile",
+                "icon": "📘",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "je souhaiterais ouvrir un compte courant",
+                        "note": "Conditionnel de politesse (souhaiterais + infinitif)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Est-ce que je pourrais avoir quelques informations ?",
+                        "note": "Conditionnel + « est-ce que » (registre poli)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Cela dit, j'aimerais d'abord comparer les offres",
+                        "note": "Connecteur de nuance + conditionnel",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et j'imagine que l'application permet de gérer tout ça, non ?",
+                        "note": "Affirmation atténuée + tag question",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Si je comprends bien…, c'est bien ça ?",
+                        "note": "Hypothèse + vérification",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "à condition d'apporter ma pièce d'identité",
+                        "note": "Gérondif de condition",
+                        "role": "c"
+                    }
+                ]
+            }
+        ]
+    },
+    "model": "google/gemini-3.8-flash-lite-tts",
+    "speakers": {
+        "Speaker 1": {
+            "voice": "Kore"
+        },
+        "Speaker 2": {
+            "voice": "Puck"
+        }
+    },
+    "turns": [
+        {
+            "speaker": "Speaker 1",
+            "text": "Banque Internationale, bonjour ! Que puis-je faire pour vous ?",
+            "en": "International Bank, hello! How can I help you?",
+            "es": "Bank Internasional, bonshúr! Ke pui ke fer pur vú?",
+            "note": "OUVERTURE: formule d'accueil"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Bonjour, je vous appelle parce que je viens de m'installer au Canada et je souhaiterais ouvrir un compte courant. Est-ce que je pourrais avoir quelques informations à ce sujet ?",
+            "en": "Hello, I'm calling because I've just moved to Canada and I'd like to open a current account. Could I have some information about that?",
+            "es": "Bonshúr, yú vú apél pársk yú vién de m'instalé o Kanadá e yú suetré uvrír un kont kurán. Es-kú yú puré avuar kélk zinformasión a se suzhé?",
+            "note": "OUVERTURE: contexte + conditionnel + demande"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Bien sûr, avec plaisir. Pour commencer, puis-je avoir votre nom complet, s'il vous plaît ?",
+            "en": "Of course, with pleasure. To start, may I have your full name, please?",
+            "es": "Bien sür, avék plézir. Pur komansé, pui-zhe avuar vótr non konplé, sil vú plé?",
+            "note": "INFORMATION: demande de nom"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Je m'appelle Kevin Picoaga. Et j'aimerais savoir quels documents je dois prévoir pour l'ouverture.",
+            "en": "My name is Kevin Picoaga. And I'd like to know what documents I need to prepare for the opening.",
+            "es": "Zhe mapél Kevin Pikoaga. E zhemré savuar kel dokümán zhe dua prevuar pur luvértür.",
+            "note": "ENCHAINEMENT: identité + « et j'aimerais savoir »"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Merci, Kevin. Et quel type de compte souhaitez-vous ouvrir exactement ?",
+            "en": "Thank you, Kevin. And what type of account would you like to open exactly?",
+            "es": "Mersí, Kevin. E kel tip de kont sueté-vú uvrír egzaktmán?",
+            "note": "INFORMATION: question type de compte"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Je pensais à un compte courant avec la banque en ligne. Cela dit, j'aimerais d'abord comparer les offres : quels sont les frais mensuels et y a-t-il des conditions particulières ?",
+            "en": "I was thinking of a current account with online banking. That said, I'd first like to compare the offers: what are the monthly fees and are there any special conditions?",
+            "es": "Zhe pansé a un kont kurán avék la bank an liñ. Sela dí, zhemré dabor komparé lé zofr : kel son lé fré mansuel e i a-til dé kondisión partiküliér?",
+            "note": "ENCHAINEMENT: « cela dit » + comparaison + double question"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Notre compte courant est sans frais mensuels et comprend une carte de débit.",
+            "en": "Our current account has no monthly fees and includes a debit card.",
+            "es": "Nótr kont kurán é san fré mansuel e konpran ün kart de débi.",
+            "note": "INFORMATION: frais et carte"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "C'est bon à savoir, merci. Dans ce cas, pourriez-vous me préciser s'il y a un découvert autorisé et quelles en sont les conditions ?",
+            "en": "Good to know, thank you. In that case, could you tell me whether there is an authorized overdraft and what the conditions are?",
+            "es": "Se bon a savuar, mersí. Dan se ka, puré-vú me presizé sil i a un dekuvér otorizé e kel an son lé kondisión?",
+            "note": "ACCORD + « dans ce cas » + conditionnel"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Vous pouvez avoir un découvert autorisé jusqu'à 500 €, sans intérêts pendant le premier mois.",
+            "en": "You can have an authorized overdraft of up to €500, with no interest during the first month.",
+            "es": "Vú puré avuar un dekuvér otorizé zhüska sink san tó, san zintéré pandán le prémie mua.",
+            "note": "INFORMATION: découvert"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Ah, ça me rassure. Et j'imagine que l'application mobile permet de gérer tout ça à distance, non ? Comment fonctionne-t-elle exactement ?",
+            "en": "Ah, that's reassuring. And I imagine the mobile app lets you manage all that remotely, right? How does it work exactly?",
+            "es": "A, sa me rasür. E zhimazhín ke lapükasión mobil permé de zheré tú sa a distans, non? Komán fonksión-t-el egzaktmán?",
+            "note": "ACCORD + « j'imagine que…, non ? » + question"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Notre application primée permet de faire des virements, des paiements et de suivre votre budget. Elle est gratuite et disponible sur iOS et Android.",
+            "en": "Our award-winning app lets you make transfers, payments and track your budget. It's free and available on iOS and Android.",
+            "es": "Nótr aplikasión primé permé de fer dé virmán, dé peimán e de suívr vótr büzhé. El é gratüit e disponibl sur iOS e Android.",
+            "note": "INFORMATION: application mobile"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Parfait, c'est exactement ce que je cherchais. Et à propos de l'ouverture, combien de temps faut-il prévoir, et y a-t-il un dépôt initial obligatoire ?",
+            "en": "Perfect, that's exactly what I was looking for. And about the opening, how much time should I allow, and is there a mandatory initial deposit?",
+            "es": "Parfé, se egzaktmán se ke zhe shershé. E a propo de luvértür, konbién de tan fo-til prevuar, e i a-til un depó inisial obligatúar?",
+            "note": "SATISFACTION + « et à propos de » + double question"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "L'ouverture prend environ vingt minutes. Il faut fournir une pièce d'identité et faire un dépôt initial de 100 €.",
+            "en": "The opening takes about twenty minutes. You need to provide an ID and make an initial deposit of €100.",
+            "es": "Luvértür pran anviron vin minüt. Il fo furnír ün piés didentité e fer un depó inisial de san tó.",
+            "note": "INFORMATION: délai et dépôt"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "D'accord, je note. Et si je n'ai pas encore de justificatif de domicile, est-ce que c'est bloquant ? Je viens d'emménager, donc je n'ai pas encore de facture à mon nom.",
+            "en": "Okay, noted. And if I don't have proof of address yet, is that a blocker? I've just moved in, so I don't have a bill in my name yet.",
+            "es": "Dakór, zhe not. E si zhe né pa ankor de zhüstifikatif de domisíl, es-kú se blokán? Zhe vién demenazhé, donk zhe né pa ankor de faktür a mon non.",
+            "note": "ACCORD + hypothèse + justification"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Pas de souci. Une attestation de résidence ou un contrat de bail suffit. Vous pourrez compléter le dossier plus tard.",
+            "en": "No problem. A proof of residence or a lease agreement is enough. You can complete the file later.",
+            "es": "Pa de susí. Ün atestasión de rezidáns u un kontra de bail sufí. Vú puré konpleté le dosié plü tar.",
+            "note": "INFORMATION: solution de repli"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Ah, tant mieux, ça change tout pour moi. Dans ce cas, pourriez-vous me confirmer s'il y a des frais cachés, par exemple pour les virements internationaux ou les retraits à l'étranger ?",
+            "en": "Ah, great, that changes everything for me. In that case, could you confirm whether there are hidden fees, for example for international transfers or withdrawals abroad?",
+            "es": "A, tan mieu, sa shanzh tú pur muá. Dan se ka, puré-vú me konfirmé sil i a dé fré kashé, par égzanpl pur lé virmán internasional u lé retré a letranzhé?",
+            "note": "SOULAGEMENT + « dans ce cas » + vérification"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Les virements en Europe sont gratuits. Pour l'international, il y a des frais, mais ils sont indiqués dans la brochure tarifaire que je peux vous envoyer.",
+            "en": "Transfers within Europe are free. For international ones, there are fees, but they are listed in the price brochure I can send you.",
+            "es": "Lé virmán an Eróp son gratüí. Pur linternasional, il i a dé fré, mé il son indiké dan la broshür tarifér ke zhe pe vú anvuyé.",
+            "note": "INFORMATION: frais détaillés"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Très bien, je vous en remercie. Et j'aimerais aussi savoir s'il existe des offres pour les nouveaux arrivants, ou des réductions la première année ?",
+            "en": "Very good, thank you. And I'd also like to know if there are offers for newcomers, or discounts for the first year?",
+            "es": "Tré bien, zhe vú zan remersí. E zhemré osí savuar sil egzist de zofr pur lé nuvo zarriván, u dé reduksión la premiér ané?",
+            "note": "REMERCIEMENT + « j'aimerais aussi savoir »"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Oui, nous avons une offre de bienvenue : les trois premiers mois sont sans frais, et la carte est offerte.",
+            "en": "Yes, we have a welcome offer: the first three months are free, and the card is free.",
+            "es": "Uí, nu zavón ün zofr de bienvenü : lé trúa premié mua son san fré, e la kart é ofért.",
+            "note": "INFORMATION: offre de bienvenue"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "C'est une bonne nouvelle. Donc si je comprends bien, je peux ouvrir le compte sur place dès demain, à condition d'apporter ma pièce d'identité, une attestation de résidence et le dépôt de 100 €. C'est bien ça ?",
+            "en": "That's good news. So if I understand correctly, I can open the account on site as early as tomorrow, provided I bring my ID, a proof of residence and the €100 deposit. Is that right?",
+            "es": "Se ün bon nuvel. Donk si zhe konpran bien, zhe pe uvrír le kont sur plas dé demán, a kondisión daporté ma piés didentité, ün atestasión de rezidáns e le depó de san tó. Se bien sa?",
+            "note": "RÉACTION + reformulation + vérification"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "C'est exactement ça. Vous pouvez même prendre rendez-vous en ligne pour éviter l'attente.",
+            "en": "That's exactly right. You can even book an appointment online to avoid the wait.",
+            "es": "Se egzaktmán sa. Vú puré mem prandr randévú an liñ pur evitá latánt.",
+            "note": "CONFIRMATION + conseil"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Parfait, je vais faire ça. Et dernière question : est-ce que je peux aussi ouvrir un livret d'épargne en même temps, ou faut-il attendre ?",
+            "en": "Perfect, I'll do that. And one last question: can I also open a savings account at the same time, or do I have to wait?",
+            "es": "Parfé, zhe vé fer sa. E derniér kestión : es-kú zhe pe osí uvrír un livré deparñ an mem tan, u fo-til atándr?",
+            "note": "ACCORD + « et dernière question » + alternative"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Vous pouvez l'ouvrir en même temps, c'est même recommandé. Le livret est rémunéré à 2 % et sans frais.",
+            "en": "You can open it at the same time, it's even recommended. The savings account earns 2% and has no fees.",
+            "es": "Vú puré luvrír an mem tan, se mem rekomandé. Le livré é remüneré a de pur san e san fré.",
+            "note": "INFORMATION: livret d'épargne"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "D'accord, c'est noté. Donc en résumé : compte courant sans frais mensuels, carte de débit, application mobile gratuite, découvert autorisé jusqu'à 500 €, ouverture demain avec pièce d'identité, attestation de résidence et dépôt de 100 €, plus un livret d'épargne à 2 %. J'ai bien tout compris ?",
+            "en": "Okay, noted. So to sum up: current account with no monthly fees, debit card, free mobile app, authorized overdraft up to €500, opening tomorrow with ID, proof of residence and €100 deposit, plus a savings account at 2%. Did I understand everything correctly?",
+            "es": "Dakór, se noté. Donk an rezümén : kont kurán san fré mansuel, kart de débi, aplikasión mobil gratüit, dekuvér otorizé zhüska sink san tó, uvértür demán avék piés didentité, atestasión de rezidáns e depó de san tó, plüs un livré deparñ a de pur san. Zhe bien tú konprí?",
+            "note": "RÉCAPITULATIF final structuré + vérification"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Absolument, tout est exact.",
+            "en": "Absolutely, everything is correct.",
+            "es": "Absolümán, tú ét egzakt.",
+            "note": "CONFIRMATION finale"
+        },
+        {
+            "speaker": "Speaker 2",
+            "text": "Merci beaucoup pour toutes ces informations, elles vont beaucoup m'aider. Je prends rendez-vous en ligne et je passerai demain. Bonne journée !",
+            "en": "Thank you very much for all this information, it will help me a lot. I'll book an appointment online and come by tomorrow. Have a good day!",
+            "es": "Mersí bokú pur tút se zinformasión, el von bokú medé. Zhe pran randévú an liñ e zhe pasré demán. Bon zhurné!",
+            "note": "CLÔTURE: remerciement + intention + salutation"
+        },
+        {
+            "speaker": "Speaker 1",
+            "text": "Merci à vous, Kevin ! À demain. Bonne journée.",
+            "en": "Thank you, Kevin! See you tomorrow. Have a good day.",
+            "es": "Mersí a vú, Kevin! A demán. Bon zhurné.",
+            "note": "CLÔTURE: réponse polie"
+        }
+    ]
+}

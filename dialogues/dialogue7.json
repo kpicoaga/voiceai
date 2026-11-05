@@ -1,0 +1,604 @@
+{
+    "title": "Organiser un anniversaire au Canada",
+    "task": "tache2",
+    "topic": "Organiser un anniversaire",
+    "description": "Appel à un ami installé au Canada pour organiser un anniversaire : restaurants, lieux romantiques, cuisine, salles privées, gâteau, activités, décorations, photographe, musique, invitations et cadeaux.",
+    "register": "tu",
+    "consigne": [
+        "Ouvrir poliment avec le contexte (nouvel arrivant au Canada)",
+        "Demander les meilleurs restaurants pour un anniversaire",
+        "Demander s'il y a des lieux romantiques",
+        "Demander le type de cuisine préféré localement",
+        "Demander s'il y a des salles privées et si elles sont abordables",
+        "Demander où acheter un bon gâteau et si la livraison est possible",
+        "Demander des idées d'activités en couple",
+        "Demander les célébrations particulières pour les couples",
+        "Demander des magasins de décorations et un décorateur",
+        "Demander un contact de photographe",
+        "Demander des musiciens ou DJ et le style de musique préféré",
+        "Demander de l'aide pour la liste des invités et le mode d'invitation",
+        "Demander un conseil de cadeau",
+        "Récapituler les informations",
+        "Clôturer poliment"
+    ],
+    "labels": {
+        "E": "Ami(e) au Canada",
+        "C": "Candidat(e)"
+    },
+    "roles": {
+        "Speaker 1": "C",
+        "Speaker 2": "E"
+    },
+    "expressions": [
+        "je voudrais lui organiser un anniversaire",
+        "j'aimerais tout d'abord te poser quelques questions",
+        "quels sont les meilleurs restaurants",
+        "est-ce qu'il y a des lieux romantiques",
+        "quel type de restaurant plaît généralement ici",
+        "pourrais-tu me préciser",
+        "quel endroit recommandes-tu",
+        "as-tu des idées d'activités",
+        "connais-tu des magasins",
+        "peux-tu m'aider à dresser la liste",
+        "vaut-il mieux leur envoyer une invitation",
+        "quel cadeau me proposes-tu"
+    ],
+    "templateBank": {
+        "title": "Boîte à outils — Organiser un anniversaire au Canada",
+        "sub": "Structures utiles extraites du dialogue TCF (B1/B2) : ouvrir, enchaîner, réagir, gérer l'imprévu et repérer la grammaire.",
+        "toggle": "Afficher les structures utiles",
+        "categories": [
+            {
+                "name": "L'Ouverture & Clôture",
+                "icon": "🚪",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Salut ! Je viens de m'installer ici au Canada avec mon conjoint et je voudrais lui organiser un anniversaire. Mais j'aimerais tout d'abord te poser quelques questions, comme ça.",
+                        "note": "Ouverture réelle du dialogue — contexte + raison + demande de poser des questions",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Bien sûr, vas-y.",
+                        "note": "Accord + invitation à poser les questions",
+                        "role": "e"
+                    },
+                    {
+                        "fr": "Merci infiniment pour ton aide.",
+                        "note": "Clôture réelle du dialogue — remerciement",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Merci beaucoup à toi. À bientôt !",
+                        "note": "Réponse polie au remerciement — formule de clôture",
+                        "role": "e"
+                    },
+                    {
+                        "fr": "À bientôt, merci !",
+                        "note": "Salutation finale",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Enchaînements",
+                "icon": "🔗",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Donc, premièrement, quels sont les meilleurs restaurants de la ville pour un anniversaire ?",
+                        "note": "« Premièrement » — lancer la première question",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et deuxièmement, est-ce qu'il y a des lieux romantiques pour une soirée spéciale ?",
+                        "note": "« Et deuxièmement » — enchaîner sur un nouveau thème",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et en fait, quel type de restaurant plaît généralement ici ? Est-ce qu'il s'agit de la cuisine locale ou plutôt internationale ?",
+                        "note": "« Et en fait » — relance + question alternative",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et est-ce qu'il y a des salles ou des espaces pour organiser un petit événement privé ?",
+                        "note": "« Et » — enchaîner sur le thème des salles privées",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et puis, quel endroit recommandes-tu pour acheter un bon gâteau d'anniversaire ?",
+                        "note": "« Et puis » — enchaîner sur le thème du gâteau",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et ensuite, as-tu des idées d'activités à faire en couple pour cette occasion-là ?",
+                        "note": "« Et ensuite » — enchaîner sur les activités",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "D'ailleurs, connais-tu des magasins où je pourrais trouver des décorations pour l'anniversaire ?",
+                        "note": "« D'ailleurs » — enchaîner sur les décorations",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et enfin, pour les cadeaux, quel cadeau me proposes-tu pour mon conjoint ?",
+                        "note": "« Et enfin » — dernier thème, les cadeaux",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "Les Réactions",
+                "icon": "😌",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "OK, oui, bien sûr.",
+                        "note": "Accusé de réception — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "OK, j'y penserai.",
+                        "note": "Prise en compte de l'information — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, donc c'est à moi de choisir, maintenant. OK.",
+                        "note": "Réaction amusée — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah, heureusement, heureusement ! Donc très bien.",
+                        "note": "Soulagement — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ah bon ? Oui, certainement, pour célébrer l'amour.",
+                        "note": "Surprise et accord — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Ça va, ça va, très bien.",
+                        "note": "Réaction positive — phrase banque",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "L'Imprévu",
+                "icon": "⚠️",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "Pourrais-tu me préciser si ces espaces sont abordables ?",
+                        "note": "Question de secours — conditionnel de politesse pour demander un détail",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "À ton avis, vaut-il mieux leur envoyer une invitation ou simplement les appeler ?",
+                        "note": "Négociation polie (alternative) — phrase banque",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Et donc, dans ce cas-là, la musique classique est-elle préférée lors des anniversaires, ou vaut mieux opter pour la musique jazz, rock et électro ?",
+                        "note": "Question alternative complexe — phrase banque",
+                        "role": "c"
+                    }
+                ]
+            },
+            {
+                "name": "La Grammaire Utile",
+                "icon": "📘",
+                "role": "c",
+                "items": [
+                    {
+                        "fr": "je voudrais lui organiser un anniversaire.",
+                        "note": "Conditionnel de politesse (je voudrais + infinitif) + pronom « lui »",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "j'aimerais tout d'abord te poser quelques questions.",
+                        "note": "Conditionnel de politesse (j'aimerais + infinitif)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Pourrais-tu me préciser si ces espaces sont abordables ?",
+                        "note": "Inversion sujet-verbe (pourrais-tu) — registre poli",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "quel type de restaurant plaît généralement ici ?",
+                        "note": "Structure interrogative avec « quel » + sujet inversé",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "Est-ce qu'il s'agit de la cuisine locale ou plutôt internationale ?",
+                        "note": "« Est-ce qu'il s'agit de » — structure impersonnelle + alternative",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "la musique classique est-elle préférée lors des anniversaires ?",
+                        "note": "Inversion avec sujet nominal (la musique… est-elle)",
+                        "role": "c"
+                    },
+                    {
+                        "fr": "vaut-il mieux opter pour la musique jazz, rock et électro ?",
+                        "note": "Structure impersonnelle (vaut-il mieux + infinitif)",
+                        "role": "c"
+                    }
+                ]
+            }
+        ]
+    },
+    "model": "google/gemini-3.8-flash-lite-tts",
+    "speakers": {
+        "Speaker 1": {
+            "voice": "Puck"
+        },
+        "Speaker 2": {
+            "voice": "Kore"
+        }
+    },
+    "turns": [
+        {
+            "speaker": "Speaker 1",
+            "instructions": "warm and informal",
+            "text": "Salut ! Je viens de m'installer ici au Canada avec mon conjoint et je voudrais lui organiser un anniversaire. Mais j'aimerais tout d'abord te poser quelques questions, comme ça.",
+            "en": "Hi! I've just moved here to Canada with my partner and I'd like to organize a birthday for him. But first of all, I'd like to ask you a few questions, just like that.",
+            "es": "Salú ! Zhe vién de minstalé isí o Kanadá avek mon konzhüén e zhe vudré lüi organizé an aniversér. Mé zhemré tut dabór te pozé kélk kestión, kom sa.",
+            "note": "OUVERTURE: \"Je viens de m'installer\" - contexte; DEMANDE: \"j'aimerais tout d'abord te poser quelques questions\" - demande polie"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "encouraging",
+            "text": "Bien sûr, vas-y.",
+            "en": "Of course, go ahead.",
+            "es": "Bien sür, vazi.",
+            "note": "RESPONSE: Accord + invitation à poser les questions"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "curious",
+            "text": "Donc, premièrement, quels sont les meilleurs restaurants de la ville pour un anniversaire ?",
+            "en": "So, first of all, what are the best restaurants in the city for a birthday?",
+            "es": "Donk, premiermán, kel son lé meyér restorán de la vil pur an aniversér ?",
+            "note": "ENCHAINEMENT: \"Premièrement\" - première question, thème des restaurants"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "informative and lively",
+            "text": "Normalement, les meilleurs sont La Belle Terrasse et aussi Le Jardin Romantique. C'est un nom intéressant pour la célébration !",
+            "en": "Normally, the best ones are La Belle Terrasse and also Le Jardin Romantique. That's an interesting name for the celebration!",
+            "es": "Normalmán, lé meyér son la Bel Terás e osí le Zhardén Romantík. Sé an nón intéressán pur la selebrasión !",
+            "note": "INFORMATION: Deux restaurants recommandés + remarque sur le nom"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "acknowledging",
+            "text": "OK, oui, bien sûr. Et deuxièmement, est-ce qu'il y a des lieux romantiques pour une soirée spéciale ?",
+            "en": "OK, yes, of course. And secondly, are there romantic places for a special evening?",
+            "es": "Oké, uí, bien sür. E deuziemmán, é-til ia dé lieu romantík pur ün suaré spesial ?",
+            "note": "ENCHAINEMENT: \"Et deuxièmement\" - nouveau thème, les lieux romantiques"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "enthusiastic",
+            "text": "Euh, oui. Au bord du lac, c'est très, très bien.",
+            "en": "Uh, yes. By the lake, it's very, very nice.",
+            "es": "Ö, uí. O bor dü lak, sé tré, tré bien.",
+            "note": "INFORMATION: Lieu romantique — au bord du lac"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "reflective",
+            "text": "OK, j'y penserai. Et en fait, quel type de restaurant plaît généralement ici ? Est-ce qu'il s'agit de la cuisine locale ou plutôt internationale ?",
+            "en": "OK, I'll think about it. And actually, what type of restaurant is generally popular here? Is it local cuisine or rather international?",
+            "es": "Oké, zhi pansré. E an fet, kel tip de restorán ple zhenéralmán isí ? É-til sazhi de la küizín lokal u plutó internasional ?",
+            "note": "ENCHAINEMENT: \"Et en fait\" - nouveau thème, la cuisine — question alternative"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "nuanced",
+            "text": "Euh, je dirais la cuisine locale, franchement. Mais l'international plaît aussi.",
+            "en": "Uh, I'd say local cuisine, honestly. But international is also popular.",
+            "es": "Ö, zhe diré la küizín lokal, ranshmán. Mé linternasional ple osí.",
+            "note": "INFORMATION: Réponse nuancée — cuisine locale vs internationale"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "amused",
+            "text": "Ah, donc c'est à moi de choisir, maintenant. OK.",
+            "en": "Ah, so it's up to me to choose now. OK.",
+            "es": "A, donk sé a muá de shuazír, mntnán. Oké.",
+            "note": "RÉACTION: Amusement — c'est à moi de choisir"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "casual",
+            "text": "Ouais.",
+            "en": "Yeah.",
+            "es": "Ué.",
+            "note": "RÉACTION: Accord bref et familier"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "practical",
+            "text": "Et est-ce qu'il y a des salles ou des espaces pour organiser un petit événement privé ?",
+            "en": "And are there any rooms or spaces to organize a small private event?",
+            "es": "E é-til ia dé sal u dé espás pur organizé an pti tevenmán privé ?",
+            "note": "ENCHAINEMENT: Nouveau thème, les salles privées"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "informative",
+            "text": "Oui, quelques salles privées sont disponibles.",
+            "en": "Yes, a few private rooms are available.",
+            "es": "Uí, kélk sal privé son disponibl.",
+            "note": "INFORMATION: Salles privées disponibles"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "interested",
+            "text": "Pourrais-tu me préciser si ces espaces sont abordables ?",
+            "en": "Could you tell me whether these spaces are affordable?",
+            "es": "Puré-tü me presizé si sé espás son aborabl ?",
+            "note": "ENCHAINEMENT: Nouveau thème, le budget — question avec conditionnel de politesse"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "measured",
+            "text": "Euh, ça dépend, franchement, mais souvent assez abordables.",
+            "en": "Uh, it depends, honestly, but often quite affordable.",
+            "es": "Ö, sa depán, ranshmán, mé suvan asé aborabl.",
+            "note": "INFORMATION: Prix variable — souvent abordables"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "relieved",
+            "text": "Ah, heureusement, heureusement ! Donc très bien. Et puis, quel endroit recommandes-tu pour acheter un bon gâteau d'anniversaire ?",
+            "en": "Ah, thankfully, thankfully! So, very good. And then, what place do you recommend for buying a good birthday cake?",
+            "es": "A, örözmán, örözmán ! Donk tré bien. E püi, kel andrúa rekománd-tü pur ashté an bon gat daniversér ?",
+            "note": "ENCHAINEMENT: \"Et puis\" - nouveau thème, le gâteau — réaction positive + question"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "enthusiastic",
+            "text": "Ah, moi je te recommande... tu peux peut-être aller à Sweet Avenue. Et il y en a d'autres aussi, en fait. Il s'appelle Délice d'Amour. Excellent choix !",
+            "en": "Ah, I recommend... you could perhaps go to Sweet Avenue. And there are others too, actually. It's called Délice d'Amour. Excellent choice!",
+            "es": "A, muá zhe te rekománd... tü pe pe-tetr alé a Suit Avenü. E il i an a dotr osí, an fet. Il sapél Delís Damúr. Ekselán shuá !",
+            "note": "INFORMATION: Deux pâtisseries recommandées"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "confirming",
+            "text": "Donc ouais, définitivement. J'aimerais savoir si cette pâtisserie propose la livraison à domicile.",
+            "en": "So yeah, definitely. I'd like to know if this bakery offers home delivery.",
+            "es": "Donk ué, definitivmán. Zhemré savuar si set patisrí propóz la livrezón a domisíl.",
+            "note": "ENCHAINEMENT: Question complémentaire — livraison à domicile"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "helpful",
+            "text": "Oui, plusieurs livrent à domicile.",
+            "en": "Yes, several deliver to your home.",
+            "es": "Uí, plusiér livr a domisíl.",
+            "note": "INFORMATION: Livraison disponible"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "curious",
+            "text": "OK. Et ensuite, as-tu des idées d'activités à faire en couple pour cette occasion-là ?",
+            "en": "OK. And then, do you have ideas for activities to do as a couple for this occasion?",
+            "es": "Oké. E ansüit, a-tü dé zidé daktivité a fer an kupl pur set okazión-la ?",
+            "note": "ENCHAINEMENT: \"Et ensuite\" - nouveau thème, les activités en couple"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "suggestive",
+            "text": "Peut-être que tu pourrais faire une balade en traîneau ou bien une croisière. Voilà, donc des activités normales.",
+            "en": "Maybe you could go on a sleigh ride or a cruise. There you go, so, normal activities.",
+            "es": "Pe-tetr ke tü puré fer ün balad an trenó u bien ün kruazír. Vuála, donk dé zaktivité normal.",
+            "note": "INFORMATION: Suggestions d'activités — traîneau, croisière"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "inquiring",
+            "text": "OK. Et y a-t-il ici au Canada une célébration particulière pour les couples ?",
+            "en": "OK. And is there here in Canada a particular celebration for couples?",
+            "es": "Oké. E i a-til isí o Kanadá ün selebrasión partiküliér pur lé kupl ?",
+            "note": "ENCHAINEMENT: Nouveau thème, les célébrations pour couples"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "informative",
+            "text": "Pas vraiment, mais la Saint-Valentin est très, très importante.",
+            "en": "Not really, but Valentine's Day is very, very important.",
+            "es": "Pa vremán, mé la Snt Valentín e tré, tré importánt.",
+            "note": "INFORMATION: Pas de fête locale, mais la Saint-Valentin est importante"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "surprised and warm",
+            "text": "Ah bon ? Oui, certainement, pour célébrer l'amour.",
+            "en": "Really? Yes, certainly, to celebrate love.",
+            "es": "A bon ? Uí, sertenmán, pur selebré lamúr.",
+            "note": "RÉACTION: Surprise et accord — la fête de l'amour"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "agreeing",
+            "text": "Exactement.",
+            "en": "Exactly.",
+            "es": "Egzaktmán.",
+            "note": "RÉACTION: Accord bref"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "practical",
+            "text": "OK. D'ailleurs, connais-tu des magasins où je pourrais trouver des décorations pour l'anniversaire ?",
+            "en": "OK. By the way, do you know any stores where I could find birthday decorations?",
+            "es": "Oké. Dayér, koné-tü dé magazín u zhe puré truvé dé dekorasión pur laniversér ?",
+            "note": "ENCHAINEMENT: \"D'ailleurs\" - nouveau thème, les décorations"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "helpful",
+            "text": "Oui, La Grande Boutique de Fête est justement parfaite.",
+            "en": "Yes, La Grande Boutique de Fête is just perfect.",
+            "es": "Uí, la Grand Butík de Fet e zhüstmán parfét.",
+            "note": "INFORMATION: Magasin de décorations recommandé"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "interested",
+            "text": "Ah, ça va. Donc j'aimerais certainement avoir son adresse. Et connais-tu quelqu'un qui pourrait nous aider pour mieux décorer la salle ?",
+            "en": "Ah, that's fine. So I'd certainly like to have its address. And do you know anyone who could help us decorate the room better?",
+            "es": "A, sa va. Donk zhemré sertenmán avuar son adrés. E koné-tü kélkín ki puré nu zedé pur mieu dekoré la sal ?",
+            "note": "ENCHAINEMENT: Demande d'adresse + nouveau thème, le décorateur"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "accommodating",
+            "text": "Oui, un décorateur local. Je peux te donner le contact.",
+            "en": "Yes, a local decorator. I can give you the contact.",
+            "es": "Uí, an dekoratér lokal. Zhe pe te doné le kontakt.",
+            "note": "INFORMATION: Contact d'un décorateur local"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "grateful",
+            "text": "Bien sûr, tout à fait. Merci infiniment. Et ensuite, as-tu des contacts de photographe pour pouvoir immortaliser cette soirée-là ?",
+            "en": "Of course, absolutely. Thank you very much. And then, do you have any photographer contacts so we can immortalize that evening?",
+            "es": "Bien sür, tut a fe. Mersí infiniemán. E ansüit, a-tü dé kontakt de fotograf pur puvuar imortalizé set suaré-la ?",
+            "note": "ENCHAINEMENT: Nouveau thème, le photographe"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "reassuring",
+            "text": "Oui, je connais quelqu'un, en fait. Il est photographe, très compétent.",
+            "en": "Yes, I know someone, actually. He's a photographer, very competent.",
+            "es": "Uí, zhe koné kélkín, an fet. Il e fotograf, tré kompetán.",
+            "note": "INFORMATION: Contact d'un photographe compétent"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "pleased",
+            "text": "Ça va, ça va, très bien. Et en plus des photographes, connais-tu des musiciens ou DJ pour animer cette fête-là, cette soirée ?",
+            "en": "That's fine, that's fine, very good. And besides photographers, do you know any musicians or DJs to liven up that party, that evening?",
+            "es": "Sa va, sa va, tré bien. E an plü dé fotograf, koné-tü dé muzisien u dizhé pur animé set fet-la, set suaré ?",
+            "note": "ENCHAINEMENT: Nouveau thème, la musique"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "thinking",
+            "text": "Ah, quelqu'un... j'ai connu, euh... je te passe le nom.",
+            "en": "Ah, someone... I've known, uh... I'll give you the name.",
+            "es": "A, kélkín... zhe konü, ö... zhe te pas le non.",
+            "note": "INFORMATION: Contact d'un DJ, nom à donner plus tard"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "curious",
+            "text": "OK. Et donc, dans ce cas-là, la musique classique est-elle préférée lors des anniversaires, ou vaut mieux opter pour la musique jazz, rock et électro ?",
+            "en": "OK. And so, in that case, is classical music preferred at birthdays, or is it better to go for jazz, rock or electro music?",
+            "es": "Oké. E donk, dan se ka-la, la muzík klasík e-tel preferé lor dézaniversér, u vo mieu opté pur la muzík zhaz, rok e lektró ?",
+            "note": "ENCHAINEMENT: Question sur le style de musique — alternative"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "nuanced",
+            "text": "Ah, jazz et rock. Mais ça dépend de l'ambiance, en fait, que tu veux.",
+            "en": "Ah, jazz and rock. But it depends on the atmosphere you want, actually.",
+            "es": "A, zhaz e rok. Mé sa depán de lambiáns, an fet, ke tü ve.",
+            "note": "INFORMATION: Réponse nuancée — jazz et rock, selon l'ambiance"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "acknowledging",
+            "text": "Oh, oui, OK. Et donc j'aimerais te poser une question : peux-tu m'aider à dresser la liste des invités, de nos voisins dans cet appartement-là ?",
+            "en": "Oh, yes, OK. And so I'd like to ask you a question: can you help me draw up the guest list, of our neighbors in that apartment building?",
+            "es": "O, uí, oké. E donk zhemré te pozé ün kestión : pe-tü medé a dresé la list dé zenvité, de no vuazín dan set apartmán-la ?",
+            "note": "ENCHAINEMENT: Nouveau thème, la liste des invités"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "willing",
+            "text": "Bien sûr, bien sûr, pourquoi pas. Je peux t'aider avec les voisins.",
+            "en": "Of course, of course, why not. I can help you with the neighbors.",
+            "es": "Bien sür, bien sür, purkua pa. Zhe pe tedé avek lé vuazín.",
+            "note": "RESPONSE: Accord et aide proposée"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "practical",
+            "text": "À ton avis, vaut-il mieux leur envoyer une invitation ou simplement les appeler ?",
+            "en": "In your opinion, is it better to send them an invitation or simply call them?",
+            "es": "A ton aví, vo-til mieu lur anvuyé ün invitazión u sñplmán lé apelé ?",
+            "note": "ENCHAINEMENT: Question sur le mode d'invitation — alternative"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "advising",
+            "text": "Ah, justement, un appel, ça suffit.",
+            "en": "Ah, actually, a call is enough.",
+            "es": "A, zhüstmán, an apel, sa süfi.",
+            "note": "INFORMATION: Conseil — un appel suffit"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "reflecting",
+            "text": "Alors, c'est plus chaleureux.",
+            "en": "So, it's warmer.",
+            "es": "Alór, sé plü shalorú.",
+            "note": "RÉACTION: Accord et réflexion"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "agreeing",
+            "text": "Oui, un contact humain. Plus ou moins.",
+            "en": "Yes, human contact. More or less.",
+            "es": "Uí, an kontakt ümén. Plü u muan.",
+            "note": "RÉACTION: Accord — contact humain"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "amused",
+            "text": "Oui, ouais, plus ou moins. Et enfin, pour les cadeaux, quel cadeau me proposes-tu pour mon conjoint ?",
+            "en": "Yes, yeah, more or less. And finally, for gifts, what gift do you suggest for my partner?",
+            "es": "Uí, ué, plü u muan. E anfen, pur lé kadó, kel kadó me propóz-tü pur mon konzhüén ?",
+            "note": "ENCHAINEMENT: \"Et enfin\" - dernier thème, les cadeaux"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "thoughtful",
+            "text": "Ah, ça dépend de son intérêt. Je peux te dire : un bouquet ? Ou peut-être une expérience unique. Voilà.",
+            "en": "Ah, it depends on his interests. I can tell you: a bouquet? Or maybe a unique experience. There you go.",
+            "es": "A, sa depán de son interés. Zhe pe te dir : an buké ? U pe-tetr ün eksperiáns üník. Vuála.",
+            "note": "INFORMATION: Suggestions de cadeaux — bouquet, expérience unique"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "grateful and closing",
+            "text": "OK, oui, je vais voir ce que je pourrais lui apporter. Merci infiniment pour ton aide.",
+            "en": "OK, yes, I'll see what I could give him. Thank you very much for your help.",
+            "es": "Oké, uí, zhe ve vuar se ke zhe puré lüi aporté. Mersí infiniemán pur ton ed.",
+            "note": "FERMETURE: Remerciement + intention"
+        },
+        {
+            "speaker": "Speaker 2",
+            "instructions": "warm and polite",
+            "text": "Merci beaucoup à toi. À bientôt !",
+            "en": "Thank you very much. See you soon!",
+            "es": "Mersí bokú a tuá. A bientó !",
+            "note": "FERMETURE: Réponse polie au remerciement"
+        },
+        {
+            "speaker": "Speaker 1",
+            "instructions": "friendly closing",
+            "text": "À bientôt, merci !",
+            "en": "See you soon, thanks!",
+            "es": "A bientó, mersí !",
+            "note": "FERMETURE: Salutation finale"
+        }
+    ]
+}
